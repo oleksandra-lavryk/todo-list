@@ -10,5 +10,5 @@ export default function Timer() {
     };
   }, [time]);
 
-  return <p>You are {time} seconds on this page</p>;
+  return <p class="timer">You are {time} seconds on this page</p>;
 }

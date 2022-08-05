@@ -1,24 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+*:focus {
+  outline: none;
+}
+
 body {
+  min-height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.add-button,
+button {
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
 }
 
-.list {
-  padding-left: 20px;
-  max-width: 500px;
+.add-button {
+  height: 42px;
+  background-color: #484e56;
+  padding: 0 25px;
 }
 
-.list-item {
-  margin-bottom: 10px;
+.add-button:hover {
+  background-color: #dc1370;
 }
 
 .list-item button {
@@ -26,30 +36,113 @@ code {
   width: 70px;
 }
 
+.list-item button:hover {
+  color: #dc1370;
+}
+
+.timer,
+.list-title {
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.todo-list-container {
+  max-width: 700px;
+  padding: 20px;
+  margin: auto;
+  color: #FFFFFF;
+  background-color: #3c424a;
+}
+
+.list {
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.list-item:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+
+
 .list-item.checked .list-item-text {
   text-decoration: line-through;
+  color: #767c85;
 }
 
 .task-input {
   margin-right: 10px;
 }
 
+.update-input {
+  background-color: transparent;
+  border: none;
+
+}
+
+.task-input,
+.list-item-bordered {
+  background-color: #484e56;
+  border: none;
+  padding: 0 10px;
+  line-height: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.list-item-bordered {
+  display: flex;
+}
+
+.task-input,
+.update-input,
+.task-input::placeholder {
+  font-size: 16px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
 .input-error {
-  color: red;
+  color: #ef5050;
   margin-top: 3px;
   font-size: 12px;
 }
 
-.list-item-text {
-  display: inline-block;
-  width: 250px;
+.list-item-text,
+.update-input {
+  margin-right: auto;
 }
 
-.list-item-bordered {
-  border: 1px solid #000000;
-  padding: 5px;
-}
 
 .input-error-deadline {
   margin-left: 190px;
+}
+
+.done-checkbox-label {
+  position: relative;
+  width: 13px;
+  cursor: pointer;
+}
+
+.done-checkbox-label::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 13px;
+  height: 13px;
+  border: 2px solid #D41872;
+  border-radius: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.done-checkbox {
+  margin: 0;
+  appearance: none;
+}
+
+.list-item.checked .done-checkbox-label::before {
+  background-color: #D41872;
 }

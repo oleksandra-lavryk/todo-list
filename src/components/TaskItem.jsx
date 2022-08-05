@@ -29,6 +29,7 @@ export default function TaskItem(props) {
         {changeInput ? (
           <>
             <input
+              className="update-input"
               type="text"
               checked={false}
               value={updateValue}
@@ -41,11 +42,18 @@ export default function TaskItem(props) {
             {props.description} | {props.deadline}
           </div>
         )}
+
         <input
+          id={`checkbox-mark-done-${props.itemId}`}
+          className="done-checkbox"
           type="checkbox"
           checked={props.checked}
           onChange={props.handleInputChange}
         />
+        <label
+          htmlFor={`checkbox-mark-done-${props.itemId}`}
+          className="done-checkbox-label"
+        ></label>
 
         <button onClick={props.deleteItem}>Delete</button>
         {changeInput ? (

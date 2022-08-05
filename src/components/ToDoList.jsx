@@ -96,7 +96,7 @@ export default function ToDoList() {
   };
 
   return (
-    <>
+    <div class="todo-list-container">
       <AddTask
         addItem={addItem}
         inputTaskValue={inputTaskValue}
@@ -126,7 +126,7 @@ export default function ToDoList() {
           <p>No items</p>
         )}
       </ul>
-    </>
+    </div>
   );
 }
 

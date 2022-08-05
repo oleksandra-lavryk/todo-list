@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Timer />
-      <ListName name="My ToDo List" />
+      <ListName name="ToDo List" />
       <ToDoList />
     </div>
   );

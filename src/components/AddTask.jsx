@@ -15,7 +15,7 @@ export default function (props) {
         value={props.inputTaskDeadline}
         onChange={props.handleinputTaskDeadline}
       />
-      <button type="button" onClick={props.addItem}>
+      <button type="button" className="add-button" onClick={props.addItem}>
         Add new task
       </button>
       <div className="input-error">{props.inputTaskError}</div>
