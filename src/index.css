@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 *:focus {
   outline: none;
 }
@@ -145,4 +149,76 @@ button {
 
 .list-item.checked .done-checkbox-label::before {
   background-color: #D41872;
+}
+
+@media screen and (max-width: 649px) {
+
+  .todo-list-container {
+    max-width: 100%;
+  }
+
+  .task-input {
+    margin: 0;
+    width: calc(50% - 5px);
+  }
+
+  .task-input:first-of-type {
+    margin-right: 10px;
+  }
+
+  .add-button {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+
+  body,
+  .task-input,
+  .update-input,
+  .task-input::placeholder {
+    font-size: 14px;
+  }
+
+  .task-input,
+  .list-item-bordered {
+    height: 38px;
+    line-height: 38px;
+  }
+
+  .add-button {
+    height: 38px;
+    padding: 0 15px;
+  }
+
+  .list-item button {
+    width: unset;
+    padding: 0;
+  }
+
+  .done-checkbox-label.done-checkbox-label::before {
+    width: 10px;
+    height: 10px;
+  }
+
+}
+
+@media screen and (max-width: 449px) {
+
+  .list-item-bordered {
+    flex-wrap: wrap;
+    height: unset;
+    line-height: unset;
+    padding: 7px 15px;
+    justify-content: center;
+  }
+
+  .list-item-text,
+  .update-input {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+  }
 }
